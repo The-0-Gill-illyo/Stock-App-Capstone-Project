@@ -31,3 +31,12 @@ def user_cars(request):
         cars = Car.objects.filter(user_id=request.user.id)
         serializer = CarSerializer(cars, many=True)
         return Response(serializer.data)
+    
+#Create a "watchlist" app DONE
+#Register in settings.py DONE
+#Create Watchlist model (based off of the erd) DONE
+#Migrate DONE
+#Register in admin.py DONE
+#Test adding entry in Admin
+#Serializers + urls + views
+#Test on Postman
