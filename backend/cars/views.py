@@ -37,6 +37,6 @@ def user_cars(request):
 #Create Watchlist model (based off of the erd) DONE
 #Migrate DONE
 #Register in admin.py DONE
-#Test adding entry in Admin
+#Test adding entry in Admin DONE?
 #Serializers + urls + views
 #Test on Postman
