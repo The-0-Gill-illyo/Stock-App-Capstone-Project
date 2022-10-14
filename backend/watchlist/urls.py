@@ -1,6 +1,6 @@
-from django.urls import path, include
+from django.urls import path
 from watchlist import views
 
-urlpatters = [
+urlpatterns = [
     path('', views.user_watchlist)
 ]
