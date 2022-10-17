@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('watchlist', models.CharField(max_length=10)),
-                ('target_price', models.DecimalField(decimal_places=10, max_digits=10)),
+                ('target_price', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

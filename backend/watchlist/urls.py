@@ -3,5 +3,5 @@ from watchlist import views
 
 urlpatterns = [
     path('', views.user_watchlist),
-    path('add_to_watchlist/<add>/', views.add_to_watchlist)
+    path('delete_from_watchlist/<int:delete>/', views.delete_from_watchlist)
 ]

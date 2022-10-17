@@ -18,11 +18,11 @@ def user_watchlist(request):
     print(
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'GET':
-        stocks = Watchlist.objects.filter(user_id=request.user.id)
+        stocks = Watchlist.objects.filter(user=request.user)
         serializer = WatchlistSerializer(stocks, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        serializer = WatchlistSerializer(Watchlist, data=request.data)
+        serializer = WatchlistSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -31,20 +31,10 @@ def user_watchlist(request):
         Watchlist.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['GET', 'POST', 'DELETE'])
+@api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-def add_to_watchlist(request, add):
-    watchlist = get_object_or_404(Watchlist, add=add)
-    if request.method == 'GET':
-        stocks = Watchlist.objects.filter(user_id=request.user.id)
-        serializer = WatchlistSerializer(stocks, many=True)
-        return Response(serializer.data)
-    elif request.method == 'POST':
-        serializer = WatchlistSerializer(Watchlist, data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'DELETE':
+def delete_from_watchlist(request, delete):
+    watchlist = get_object_or_404(Watchlist, pk=delete)
+    if request.method == 'DELETE':
         watchlist.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
