@@ -12,7 +12,7 @@ from .serializers import WatchlistSerializer
 
 
 
-@api_view(['GET', 'POST', 'DELETE'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def user_watchlist(request):
     print(
@@ -27,9 +27,6 @@ def user_watchlist(request):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'DELETE':
-        Watchlist.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
