@@ -3,5 +3,5 @@ from watchlist import views
 
 urlpatterns = [
     path('', views.user_watchlist),
-    path('add_to_watchlist/<pk>/', views.add_to_watchlist)
+    path('add_to_watchlist/<add>/', views.add_to_watchlist)
 ]

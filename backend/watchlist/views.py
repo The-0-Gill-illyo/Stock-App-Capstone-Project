@@ -33,8 +33,8 @@ def user_watchlist(request):
 
 @api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
-def add_to_watchlist(request, pk):
-    watchlist = get_object_or_404(Watchlist, pk=pk)
+def add_to_watchlist(request, add):
+    watchlist = get_object_or_404(Watchlist, add=add)
     if request.method == 'GET':
         stocks = Watchlist.objects.filter(user_id=request.user.id)
         serializer = WatchlistSerializer(stocks, many=True)
