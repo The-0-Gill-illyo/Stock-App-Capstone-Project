@@ -15,25 +15,18 @@ import Watchlist from "./components/Watchlist/Watchlist";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-// import Watchlist from "./pages/Watchlist/watchlist";
 import axios from "axios";
 
 function App() {
-
   const [stocks, setStocks] = useState([]);
-
   useEffect(() => {
     fetchSearchedStock()
   }, [])
-
   const fetchSearchedStock = async () => {
     let response = await axios.get('https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL,MSFT', { headers: {
     'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
-    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
-  }
-})
-    setStocks(response.data)
-}
+    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'}})
+    setStocks(response.data)}
   return (
     <div>
       <Navbar />
@@ -50,13 +43,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
+      <Footer />
           <div className="search">
-            <input type="text" className="searchTerm" placeholder="Music Library Search"></input>
+            <input type="text" className="searchTerm" placeholder="Search Stock"></input>
             <button type='submit' className="searchButton">
             <i className="fa-fa search">search</i>
             </button>
           </div>
-      <Footer />
     </div>
   );
 }
