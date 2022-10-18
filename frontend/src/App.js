@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import Watchlist from "./components/Watchlist/Watchlist";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -47,7 +48,7 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route path="/watchlist" element={<Watchlist />} /> */}
+        <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
           <div className="search">
             <input type="text" className="searchTerm" placeholder="Music Library Search"></input>
