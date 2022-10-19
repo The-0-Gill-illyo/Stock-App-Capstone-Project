@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const Watchlist = (props) => {
-  const [ShowWatchlist, setShowWatchList] = useState(true);
+  const [showWatchlist, setShowWatchList] = useState(true);
 
   return (
     <div>
-      {ShowWatchlist ? (
+      {showWatchlist ? (
         <div>
-          <button onClick={() => setShowWatchList(!ShowWatchlist)}>Display Watchlist</button>
+          <button onClick={() => setShowWatchList(!showWatchlist)}>Display Watchlist</button>
         </div>
       ) : (
         <table>
@@ -27,7 +27,7 @@ const Watchlist = (props) => {
               <td>{props.parentEntries.user_Id}</td>
             </tr>
           </tbody>
-          <button onClick={() => setShowWatchList(!ShowWatchlist)}>Hide Watchlist</button>
+          <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Watchlist</button>
         </table>
       )}
     </div>

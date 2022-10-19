@@ -16,20 +16,29 @@ import Watchlist from "./components/Watchlist/Watchlist";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import axios from "axios";
+import Search from "./components/Search/Search";
 
 function App() {
   const [stocks, setStocks] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
   useEffect(() => {
     fetchSearchedStock()
   }, [])
+
+  function handleSubmit(event){
+    event.preventDefault();
+  }
+
   const fetchSearchedStock = async () => {
-    let response = await axios.get('https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL,MSFT', { headers: {
+    let response = await axios.get('https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news', { headers: {
     'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
     'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'}})
     setStocks(response.data)}
+    
   return (
     <div>
-      <Navbar />
+      <Navbar NavBarProperties={stocks} />
       <Routes>
         <Route
           path="/"
@@ -42,32 +51,22 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/watchlist" element={<Watchlist />} />
+        <Route path="/Search" element={<Search />} />
       </Routes>
       <Footer />
-          <div className="search">
-            <input type="text" className="searchTerm" placeholder="Search Stock"></input>
-            <button type='submit' className="searchButton">
-            <i className="fa-fa search">search</i>
-            </button>
-          </div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input type="text" className="searchTerm" placeholder='Stock Search' 
+                  value={searchTerm}
+                  onChange={(event) => setSearchTerm(event.target.value)}></input>
+          <button type="submit" className='searchBar'>
+          <i className='fa-fa search'>Search</i> 
+          </button>
+        </form>
+        </div>
     </div>
   );
 }
 
 export default App;
 
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL,MSFT',
-  // headers: {
-  //   'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
-  //   'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
-  // }
-// };
-
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
