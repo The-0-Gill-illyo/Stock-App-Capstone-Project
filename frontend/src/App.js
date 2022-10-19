@@ -20,7 +20,6 @@ import Search from "./components/Search/Search";
 
 function App() {
   const [stocks, setStocks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchSearchedStock()
@@ -54,16 +53,6 @@ function App() {
         <Route path="/Search" element={<Search />} />
       </Routes>
       <Footer />
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input type="text" className="searchTerm" placeholder='Stock Search' 
-                  value={searchTerm}
-                  onChange={(event) => setSearchTerm(event.target.value)}></input>
-          <button type="submit" className='searchBar'>
-          <i className='fa-fa search'>Search</i> 
-          </button>
-        </form>
-        </div>
     </div>
   );
 }
