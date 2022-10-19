@@ -63,6 +63,7 @@ function App() {
         <li className='listItem'>Watchlist</li>
         <li className='listItem'>Target Price</li>
         <li className='listItem'>User Id</li>
+        <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Watchlist</button>
       </ul>
       )}
       </>
