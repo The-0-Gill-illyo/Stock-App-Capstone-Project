@@ -20,19 +20,19 @@ import Search from "./components/Search/Search";
 
 function App() {
   const [stocks, setStocks] = useState([]);
+  const [showWatchlist, setShowWatchList] = useState(true);
 
   useEffect(() => {
     fetchSearchedStock()
   }, [])
 
-  function handleSubmit(event){
-    event.preventDefault();
-  }
-
   const fetchSearchedStock = async () => {
     let response = await axios.get('https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news', { headers: {
-    'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
-    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'}})
+      'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+      'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
+    }
+  }
+  )
     setStocks(response.data)}
     
   return (
@@ -52,10 +52,23 @@ function App() {
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/Search" element={<Search />} />
       </Routes>
+      <>
+      {showWatchlist ? (
+        <div>
+          <button onClick={() => setShowWatchList(!showWatchlist)}>Display Watchlist</button>
+        </div>
+      ) : (
+        <ul className='list'>
+        <li className='listItem'>Id</li>
+        <li className='listItem'>Watchlist</li>
+        <li className='listItem'>Target Price</li>
+        <li className='listItem'>User Id</li>
+      </ul>
+      )}
+      </>
       <Footer />
     </div>
   );
 }
 
 export default App;
-
