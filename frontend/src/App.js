@@ -58,6 +58,7 @@ function App() {
           ) : (
             <ul className='list'>
           <a href="http://localhost:3000/Watchlist/" target="_blank"><li className='listItem'>Watch List</li></a>
+          <a href="http://localhost:3000/StockSearch/" target="_blank"><li className='listItem'>Stock Search</li></a>
           {/* <script>
             function NewTab() {
               window.open("http://127.0.0.1:8000/api/watchlist/",
