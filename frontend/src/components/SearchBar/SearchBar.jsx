@@ -9,7 +9,7 @@ const SearchBar = (props) => {
 
     function handleSubmit(event){
         event.preventDefault();
-        props.searchGames(searchTerm)
+        props.searchStocks(searchTerm)
     }
 
     return (

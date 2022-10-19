@@ -16,8 +16,7 @@ import Watchlist from "./components/Watchlist/Watchlist";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import axios from "axios";
-import Search from "./components/Search/Search";
-
+import StockSearch from "./components/StockSearch/StockSearch";
 function App() {
   const [stocks, setStocks] = useState([]);
   const [showWatchlist, setShowWatchList] = useState(true);
@@ -50,7 +49,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/watchlist" element={<Watchlist />} />
-        <Route path="/Search" element={<Search />} />
+        <Route path="/StockSearch" element={<StockSearch />} />
       </Routes>
       <>
       <div>
@@ -58,7 +57,7 @@ function App() {
           <button onClick={() => setShowWatchList(!showWatchlist)}>Display Watchlist</button>
           ) : (
             <ul className='list'>
-          <a href="http://127.0.0.1:8000/api/watchlist/" target="_blank"><li className='listItem'>Watch List</li></a>
+          <a href="http://localhost:3000/Watchlist/" target="_blank"><li className='listItem'>Watch List</li></a>
           {/* <script>
             function NewTab() {
               window.open("http://127.0.0.1:8000/api/watchlist/",
