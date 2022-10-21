@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth"
 import axios from "axios";
 
 
 
-const StockSearch = (props) => {
+const StockSearch = () => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
-    const [user, token] = useAuth();
+
 
     useEffect(() => {
   
   // console.log("Search Page")
-  }, [token]);
+  }, []);
 
     async function handleSubmit(event){
       event.preventDefault()
@@ -20,7 +19,7 @@ const StockSearch = (props) => {
       let newSearch;
 
       console.log(searchInput)
-      props.StockSearchProperties(newSearch)
+      // props.parentStockSearch(newSearch)
 
       try{
         let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${searchInput}`, { headers: {

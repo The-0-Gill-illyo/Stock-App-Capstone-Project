@@ -12,7 +12,7 @@ const Watchlist = (props) =>{
             </tr>
             </thead>
             <tbody>
-            {props.parentWatchlist.map((stock, index) => {
+            {props.parentWatchlist.map((stock, ...index) => {
                 return (
                     <tr key={index}>
                         <td>{stock.id}</td>
