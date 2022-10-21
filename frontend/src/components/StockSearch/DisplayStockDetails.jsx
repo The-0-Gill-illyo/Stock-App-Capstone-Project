@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
 
 
-const DisplayStockSearch = (props) => {
+
+export default function DisplayStockSearch(){
 
     
-    return(
-        <div>
-            {props.searchStocks.get(element)}
-    
-        </div>
-    )
-}   
-    export default DisplayStockSearch; 
+}

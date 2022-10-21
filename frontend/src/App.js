@@ -12,7 +12,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Watchlist from "./components/Watchlist/Watchlist";
-
+import DisplayStockSearch from "./components/StockSearch/DisplayStockDetails";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import StockSearch from "./components/StockSearch/StockSearch";
@@ -52,6 +52,7 @@ function App() {
         <Route path="/watchlist" element={<Watchlist parentWatchlist={stocks}/>} />
         <Route path="/stocknews" element={<StockNews parentStockNews={stocks}/>} />
         <Route path="/stocksearch" element={<StockSearch/>} />
+        <Route path="/displaystockdetails" element={<DisplayStockSearch />} />
       </Routes>
       <>
       <div>
