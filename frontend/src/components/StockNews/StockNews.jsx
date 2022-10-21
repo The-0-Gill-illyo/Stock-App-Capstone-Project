@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DisplayNews from './DiaplayNews';
 
-const StockNews = () => {
+const StockNews = (props) => {
     const [stockNews, setStockNews] = useState("");
 
     useEffect(() => {
@@ -34,6 +35,7 @@ const StockNews = () => {
                 <i className="fa-fa search">search</i>
                 </button>
               </form>
+              <DisplayNews stockNews={stockNews}/>
             </div>
         );      
 }   

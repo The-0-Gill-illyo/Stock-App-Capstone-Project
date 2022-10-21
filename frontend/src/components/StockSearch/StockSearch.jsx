@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import DisplayStockDetails from "./DisplayStockDetails";
 
 
 
@@ -42,6 +43,7 @@ const StockSearch = () => {
                 <i className="fa-fa search">search</i>
                 </button>
               </form>
+              <DisplayStockDetails searchStocks={searchStocks}/>
             </div>
   );
 
