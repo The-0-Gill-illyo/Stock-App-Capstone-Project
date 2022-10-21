@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const StockNews = (props) => {
+const StockNews = () => {
     const [stockNews, setStockNews] = useState("");
 
     useEffect(() => {
@@ -14,12 +14,13 @@ const StockNews = (props) => {
             let newsSearch;
       
             console.log(stockNews)
-            props.StockNews(newsSearch)
+            // props.StockNews(newsSearch)
 
             try{
-                let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news${stockNews}`, { headers: {
+                let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news`, { headers: {
                 'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
                 'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'}})
+                console.log(response.data)
         } catch(error){ 
           console.log(error.response.data)
       }           
