@@ -21,18 +21,10 @@ import StockNews from "./components/StockNews/StockNews";
 function App() {
   const [stocks, setStocks] = useState([]);
   const [showWatchlist, setShowWatchList] = useState(true);
+  
 
 
-  // useEffect(() => {
-  //   searchResults()
-  // },[])
 
-  // const searchResults = async () => {
-  //   let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/mo/module/${searchInput}`, {headers: {
-  //     'X-RapidAPI-Key': '86d3b4a83bmsh0dd08eec6709231p1c4988jsn55fac02dce50',
-  //     'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
-  //   }})
-  // }
     
   return (
     <div>
@@ -49,7 +41,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/home" element={<HomePage HomePageProperties={stocks}/>}/>
-        <Route path="/watchlist" element={<Watchlist parentWatchlist={stocks}/>} />
+        <Route path="/watchlist" element={<Watchlist parentAddStocks={stocks}/>} />
         <Route path="/stocknews" element={<StockNews parentStockNews={stocks}/>} />
         <Route path="/stocksearch" element={<StockSearch/>} />
         <Route path="/displaystockdetails" element={<DisplayStockSearch />} />
@@ -72,6 +64,7 @@ function App() {
       </>
       <Footer />
     </div>
+    
   );
 }
 

@@ -1,22 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
-import useCustomForm from "../../hooks/useCustomForm";
+import React, { useState } from 'react';
+import Watchlist from './Watchlist';
 
-// let initalValues = {
-//     id: "",
-//     watchlist: "",
-//     target_price: "",
-//     user_id: "",
-// };
 
 const AddStock = () =>{
-//     const [user, token] = useAuth{}
-//     const navigate = useNavigate{}
-//     const [formData, handleInputChange, handleSubmit] = useCustomForm(initalValues)
+    const [addStocks, setAddStocks] = useState([])
 
-
-
+    return(
+        <div>
+           {/* <Watchlist addStocks={addStocks}/> */}
+        </div>
+    )
 }
 
 export default AddStock;
