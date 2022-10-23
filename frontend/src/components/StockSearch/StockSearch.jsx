@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayStockDetails from "./DisplayStockDetails";
+import Watchlist from "../Watchlist/Watchlist";
 
 
 
@@ -37,13 +38,15 @@ const StockSearch = () => {
 
         return ( 
             <div>
-              <form onSubmit={handleSubmit}>             
+              <form onSubmit={handleSubmit}>                           
                 <input type="text"  className="searchTerm" onChange={(event)=>setSearchInput(event.target.value)} placeholder="SEARCH"></input>
                 <button type='submit' className="searchButton">
                 <i className="fa-fa search">search</i>
                 </button>
               </form>
               <DisplayStockDetails searchStocks={searchStocks}/>
+              <button type='submit'>Add to Watchlist</button>  
+
             </div>
   );
 
