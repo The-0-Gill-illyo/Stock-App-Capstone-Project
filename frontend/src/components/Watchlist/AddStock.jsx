@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
-// import Watchlist from './Watchlist';
-
 
 const AddStock = (props) =>{
 
+    const [stockName, setStockName] = useState("")
+    const [targetPrice, setTargetPrice] = useState(0)
+
+    function handleSubmit(event){
+        event.preventDefault();
+        let newStock = {
+            stockName: stockName,
+            targetPrice: targetPrice
+        };
+        console.log(newStock)
+    }
+
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Stock Name</label>
-            <input type='letters' />
+            <input type='letter' value={stockName} onChange={(event)=> setStockName(event.target.value)}/>
             <label>Target Price</label>
-            <input type='numbers' />
-            <button type='Add to Watchlist'>Add to Watchlist</button>
+            <input type='number' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
+            <button type='submit'>Add to Watchlist</button>
         </form>
-        // <div>
-        //    {/* <Watchlist addStocks={addStocks}/> */}
-        // </div>
+     
     )
 }
 

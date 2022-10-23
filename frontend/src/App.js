@@ -51,7 +51,7 @@ function App() {
       <>
       <div>
       {showWatchlist ? (
-        <button onClick={() => setShowWatchList(!showWatchlist)}>Display Watchlist</button>
+        <button onClick={() => setShowWatchList(!showWatchlist)}>Display Options</button>
         ) : (
           <ul className='list'>
           <a href="http://localhost:3000/Watchlist/" target="_blank" rel="noreferrer"><li className='listItem'>Watch List</li></a>
@@ -59,7 +59,7 @@ function App() {
           <a href="http://localhost:3000/StockNews/" target="_blank" rel="noreferrer"><li className='listItem'>Stock News</li></a>
       
 
-        <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Watchlist</button>
+        <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Optionts</button>
       </ul>
       )}
       </div>
