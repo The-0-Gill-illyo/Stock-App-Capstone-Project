@@ -8,7 +8,9 @@ export default function DisplayStockNews(props){
     
     return(
        <h1>
-        <a href="{props.stockNews.link}">{props.stockNews.guid}</a>
+        {props.stockNews.description}
+        <br></br>
+        <a href="{props.stockNews.link}">{props.stockNews.link}</a>
         <br></br>
 
         </h1>

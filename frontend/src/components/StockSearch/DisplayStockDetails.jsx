@@ -10,8 +10,9 @@ export default function DisplayStockSearch(props){
     }
     
     return(
-        <h1>Ticker Symbol: {props.searchStocks.symbol}
-        <br></br>
+        <h1>
+            Ticker Symbol: {props.searchStocks.symbol}
+            <br></br>
             Ask: {props.searchStocks.ask}
             <br></br>
             Currency: {props.searchStocks.currency}
@@ -33,6 +34,6 @@ export default function DisplayStockSearch(props){
             Trailing P/E: {props.searchStocks.trailingPE}
             <br></br>
             Daily 3-Month Average: {props.searchStocks.averageDailyVolume3Month}
-            </h1>
+        </h1>
         )
         }
