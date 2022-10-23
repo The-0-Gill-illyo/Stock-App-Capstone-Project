@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AddStock from './AddStock';
+
 
 const Watchlist = () =>{
 
@@ -11,6 +11,7 @@ const Watchlist = () =>{
     }
 
     return (
+        <div>
         <table>
             <thead>
             <tr>
@@ -28,12 +29,13 @@ const Watchlist = () =>{
                         <td>{stock.stock_name}</td>
                         <td>{stock.target_price}</td>
                         <td>{stock.user_id}</td>
+                        <button type="submit">Add to Watchlist</button>
                     </tr>
                 );
             })}
             </tbody>
-            <AddStock addNewEntryProperty={addNewStock}/>
         </table>
+        </div>
       );
 }
 export default Watchlist;

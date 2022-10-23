@@ -42,11 +42,11 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/home" element={<HomePage HomePageProperties={stocks}/>}/>
-        <Route path="/watchlist" element={<Watchlist parentAddStocks={stocks}/>} />
-        <Route path="/stocknews" element={<StockNews parentStockNews={stocks}/>} />
+        <Route path="/watchlist" element={<Watchlist />} />
+        <Route path="/stocknews/" element={<StockNews />} />
         <Route path="/stocksearch" element={<StockSearch/>} />
-        <Route path="/displaystockdetails" element={<DisplayStockSearch />} />
-        <Route path="/addstock" element={<AddStock />} />
+        {/* <Route path="/displaystockdetails" element={<DisplayStockSearch />} /> */}
+        {/* <Route path="/addstock" element={<AddStock />} /> */}
       </Routes>
       <>
       <div>

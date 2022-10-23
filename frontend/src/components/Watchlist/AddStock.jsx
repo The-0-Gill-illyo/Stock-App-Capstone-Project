@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Watchlist from './Watchlist';
 
 const AddStock = (props) =>{
 
@@ -12,18 +13,19 @@ const AddStock = (props) =>{
             targetPrice: targetPrice
         };
         console.log(newStock)
-        // props.addNewEntryProperty(newStock)
+        props.AddStockProperty(newStock)
     }
 
     return(
+        <div>
         <form onSubmit={handleSubmit}>
             <label>Stock Name</label>
             <input type='letter' value={stockName} onChange={(event)=> setStockName(event.target.value)}/>
             <label>Target Price</label>
             <input type='number' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
-            <button type='submit'>Add to Watchlist</button>  
-        </form>
-     
+       </form>
+       <Watchlist stockName={stockName}/>
+        </div>
     )
 }
 
