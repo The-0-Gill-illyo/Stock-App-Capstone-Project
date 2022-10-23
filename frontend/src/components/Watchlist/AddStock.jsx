@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import Watchlist from './Watchlist';
+// import Watchlist from './Watchlist';
 
 
-const AddStock = () =>{
-    const [addStocks, setAddStocks] = useState([])
+const AddStock = (props) =>{
 
     return(
-        <div>
-           {/* <Watchlist addStocks={addStocks}/> */}
-        </div>
+        <form>
+            <label>Stock Name</label>
+            <input type='letters' />
+            <label>Target Price</label>
+            <input type='numbers' />
+            <button type='Add to Watchlist'>Add to Watchlist</button>
+        </form>
+        // <div>
+        //    {/* <Watchlist addStocks={addStocks}/> */}
+        // </div>
     )
 }
 

@@ -13,6 +13,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Watchlist from "./components/Watchlist/Watchlist";
 import DisplayStockSearch from "./components/StockSearch/DisplayStockDetails";
+import AddStock from "./components/Watchlist/AddStock";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import StockSearch from "./components/StockSearch/StockSearch";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/stocknews" element={<StockNews parentStockNews={stocks}/>} />
         <Route path="/stocksearch" element={<StockSearch/>} />
         <Route path="/displaystockdetails" element={<DisplayStockSearch />} />
+        <Route path="/addstock" element={<AddStock />} />
       </Routes>
       <>
       <div>
@@ -62,6 +64,7 @@ function App() {
       )}
       </div>
       </>
+
       <Footer />
     </div>
     

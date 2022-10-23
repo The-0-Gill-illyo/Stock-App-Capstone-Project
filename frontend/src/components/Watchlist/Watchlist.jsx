@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import AddStock from './AddStock';
 
-
 const Watchlist = () =>{
 
-    const [addStocks, setAddStocks] = useState([{id: 1,stock_name: "AAPL", target_price: 100.50, user_id: 1}])
+    const [addStocks, setAddStocks] = useState([])
     return (
         <table>
             <thead>
