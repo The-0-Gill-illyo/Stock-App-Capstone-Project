@@ -20,33 +20,37 @@ import StockSearch from "./components/StockSearch/StockSearch";
 import StockNews from "./components/StockNews/StockNews";
 
 function App() {
-  const [stocks, setStocks] = useState([]);
+  // const [stocks, setStocks] = useState([]);
   const [showWatchlist, setShowWatchList] = useState(true);
+  const [entries, setEntries] = useState([]);
   
+  function addNewEntry(entry){
+    let tempentries = [entry, ...entries];
 
+    setEntries(tempentries)
+  }
 
 
     
   return (
     <div>
-      <Navbar NavBarProperties={stocks} />
+      <Navbar NavBarProperties={entries} />
       <Routes>
         <Route
           path="/"
           element={
             <PrivateRoute>
-              <HomePage HomePageProperties={stocks} />
+              <HomePage HomePageProperties={entries} />
             </PrivateRoute>
           }
           />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
-        <Route path="/home" element={<HomePage HomePageProperties={stocks}/>}/>
-        <Route path="/watchlist" element={<Watchlist />} />
-        <Route path="/stocknews/" element={<StockNews />} />
-        <Route path="/stocksearch" element={<StockSearch/>} />
-        {/* <Route path="/displaystockdetails" element={<DisplayStockSearch />} /> */}
-        {/* <Route path="/addstock" element={<AddStock />} /> */}
+        <Route path="/home" element={<HomePage HomePageProperties={entries}/>}/>
+        <Route path="/watchlist" element={<Watchlist parentEntries={entries}/>} />
+        <Route path="/stocknews/" element={<StockNews parentEntries={entries}/>} />
+        <Route path="/stocksearch" element={<StockSearch parentEntries={entries}/>} />
+        <Route path="/addstock" element={<AddStock adddNewEntryProperty={addNewEntry}/>} /> 
       </Routes>
       <>
       <div>

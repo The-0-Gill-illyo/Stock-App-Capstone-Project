@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayStockDetails from "./DisplayStockDetails";
+import AddStock from "../Watchlist/AddStock";
+import Watchlist from "../Watchlist/Watchlist";
 
 
 
@@ -44,6 +46,8 @@ const StockSearch = () => {
                 </button>
               </form>
               <DisplayStockDetails searchStocks={searchStocks}/>
+              <AddStock searchStocks={searchStocks}/>
+              
             </div>
   );
 

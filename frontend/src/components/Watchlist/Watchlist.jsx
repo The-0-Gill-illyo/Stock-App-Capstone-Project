@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
+import DisplayStockSearch from '../StockSearch/DisplayStockDetails';
+import AddStock from './AddStock';
 
 
-const Watchlist = () =>{
-
-    const [addStocks, setAddStocks] = useState([])
-
-    function addNewStock(entry){
-        let tempEntries = [entry, ...addStocks];
-        setAddStocks(tempEntries)
-    }
-
+const Watchlist = (props) =>{
     return (
-        <div>
         <table>
             <thead>
             <tr>
@@ -22,7 +15,7 @@ const Watchlist = () =>{
             </tr>
             </thead>
             <tbody>
-            {addStocks.map((stock, index) => {
+            {props.parentEntries.map((stock, index) => {
                 return (
                     <tr key={index}>
                         <td>{stock.id}</td>
@@ -35,7 +28,6 @@ const Watchlist = () =>{
             })}
             </tbody>
         </table>
-        </div>
       );
 }
 export default Watchlist;
