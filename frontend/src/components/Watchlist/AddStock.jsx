@@ -25,7 +25,6 @@ const AddStock = (props) =>{
             <label>Target Price</label>
             <input type='number' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
        </form>
-       {/* <Watchlist AddStock={AddStock} /> */}
         </div>
     )
 }

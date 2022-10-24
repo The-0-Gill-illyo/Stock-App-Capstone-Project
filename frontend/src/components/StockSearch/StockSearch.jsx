@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayStockDetails from "./DisplayStockDetails";
-import AddStock from "../Watchlist/AddStock";
-import Watchlist from "../Watchlist/Watchlist";
 
 
 
-const StockSearch = (props) => {
+const StockSearch = () => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
 
@@ -22,7 +20,6 @@ const StockSearch = (props) => {
       let newSearch;
 
       console.log(searchInput)
-    //  props.StockSearchProperties(newSearch)
 
       try{
         let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${searchInput}`, { headers: {

@@ -12,8 +12,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Watchlist from "./components/Watchlist/Watchlist";
-import DisplayStockSearch from "./components/StockSearch/DisplayStockDetails";
 import AddStock from "./components/Watchlist/AddStock";
+import CompanyProfile from "./components/CompanyProfile/CompanyProfile";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import StockSearch from "./components/StockSearch/StockSearch";
@@ -40,11 +40,13 @@ function App() {
           />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
-        <Route path="/home" element={<HomePage HomePageProperties={stocks}/>}/>
+        <Route path="/home" element={<HomePage />}/>
         <Route path="/watchlist" element={<Watchlist/>} />
         <Route path="/stocknews/" element={<StockNews />} />
         <Route path="/stocksearch" element={<StockSearch />} />
         <Route path="/addstock" element={<AddStock/>} /> 
+        <Route path="/companyProfile" element={<CompanyProfile/>} /> 
+        <Route path="/companyProfile/searchInput" element={<CompanyProfile/>} /> 
       </Routes>
       <>
       <div>
