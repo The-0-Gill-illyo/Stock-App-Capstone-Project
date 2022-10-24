@@ -52,9 +52,10 @@ function App() {
         <button onClick={() => setShowWatchList(!showWatchlist)}>Display Options</button>
         ) : (
           <ul className='list'>
-          <a href="http://localhost:3000/Watchlist/" target="_blank" rel="noreferrer"><li className='listItem'>Watch List</li></a>
-          <a href="http://localhost:3000/StockSearch/" target="_blank" rel="noreferrer"><li className='listItem'>Stock Search</li></a>
-          <a href="http://localhost:3000/StockNews/" target="_blank" rel="noreferrer"><li className='listItem'>Stock News</li></a>
+          <a href="http://localhost:3000/Watchlist/"><li className='listItem'>Watch List</li></a>
+          <a href="http://localhost:3000/StockSearch/"><li className='listItem'>Stock Search</li></a>
+          <a href="http://localhost:3000/StockNews/"><li className='listItem'>Stock News</li></a>
+          <a href="http://localhost:3000/CompanyProfile/"><li className='listItem'>Company Profile</li></a>
       
 
         <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Optionts</button>
