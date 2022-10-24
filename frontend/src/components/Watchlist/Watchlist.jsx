@@ -4,7 +4,16 @@ import AddStock from './AddStock';
 
 
 const Watchlist = (props) =>{
+
+    const [addStocks, setAddStocks] = useState([])
+
+    function addNewStock(entry){
+        let tempEntries = [entry, ...addStocks];
+        setAddStocks(tempEntries)
+    }
+
     return (
+        <div>
         <table>
             <thead>
             <tr>
@@ -15,7 +24,7 @@ const Watchlist = (props) =>{
             </tr>
             </thead>
             <tbody>
-            {props.parentEntries.map((stock, index) => {
+            {addStocks.map((stock, index) => {
                 return (
                     <tr key={index}>
                         <td>{stock.id}</td>
@@ -28,6 +37,7 @@ const Watchlist = (props) =>{
             })}
             </tbody>
         </table>
+        </div>
       );
 }
 export default Watchlist;

@@ -6,7 +6,7 @@ import Watchlist from "../Watchlist/Watchlist";
 
 
 
-const StockSearch = () => {
+const StockSearch = (props) => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
 
@@ -22,7 +22,7 @@ const StockSearch = () => {
       let newSearch;
 
       console.log(searchInput)
-      // props.parentStockSearch(newSearch)
+    //  props.StockSearchProperties(newSearch)
 
       try{
         let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${searchInput}`, { headers: {
@@ -45,9 +45,7 @@ const StockSearch = () => {
                 <i className="fa-fa search">search</i>
                 </button>
               </form>
-              <DisplayStockDetails searchStocks={searchStocks}/>
-              <AddStock searchStocks={searchStocks}/>
-              
+              <DisplayStockDetails searchStocks={searchStocks}/>             
             </div>
   );
 
