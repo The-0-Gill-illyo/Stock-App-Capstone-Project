@@ -6,13 +6,12 @@ export default function DisplayStockNews(props){
         let newsId = news.id.newsId
     }
     
+    {props.stockNews.map((description, link) => {
     return(
-       <h1>
-        {props.stockNews.description}
-        <br></br>
-        <a href="{props.stockNews.link}">{props.stockNews.link}</a>
-        <br></br>
+       <h5>
+        {props.stockNews.description[0]}
 
-        </h1>
+        </h5>
     )
+})}
 }
