@@ -1,7 +1,7 @@
 ul {
   display: flex;
-  justify-content: space-between;
-  list-style-type: none;
+  justify-content: space-evenly;
+  list-style-type: unset;
 }
 
 li {
@@ -10,19 +10,19 @@ li {
 
 .pretty-background {
   background:
-    linear-gradient(red, transparent),
-    linear-gradient(to top left, lime, transparent),
-    linear-gradient(to top right, blue, transparent);
+    linear-gradient(rgb(6, 105, 19), transparent),
+    linear-gradient(to top left, rgb(20, 37, 20), transparent),
+    linear-gradient(to top right, rgba(221, 77, 10, 0.781), transparent);
   background-blend-mode: screen;
-  margin-bottom: 2rem;
-  padding: 1.5rem 1rem;
+  margin-bottom: 0rem;
+  padding: 1rem 1.5rem;
 }
 
 .profile-username {
-  color: #1248a6 !important;
+  color: #000000 !important;
 }
 .pretty-background button {
-  display: inline;
+  display: table-column;
   background: chocolate;
   border: 3px solid rgb(8, 8, 8);
   color: gold;
@@ -32,5 +32,5 @@ li {
 
 .brand {
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }

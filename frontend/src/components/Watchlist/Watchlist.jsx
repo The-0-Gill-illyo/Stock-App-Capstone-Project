@@ -32,7 +32,7 @@ const Watchlist = (props) =>{
                         <td>{stock.stock_name}</td>
                         <td>{stock.target_price}</td>
                         <td>{stock.user_id}</td>
-                        <button className="button" type="submit" >Add to Watchlist</button>
+                        {/* <button className="button" type="submit" >Add to Watchlist</button> */}
                     </tr>
                 );
             })}
