@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, {  useState } from 'react';
 import "./App.css";
+import background from "./img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -19,16 +20,21 @@ import PrivateRoute from "./utils/PrivateRoute";
 import StockSearch from "./components/StockSearch/StockSearch";
 import StockNews from "./components/StockNews/StockNews";
 
+
 function App() {
   const [stocks, setStocks] = useState([]);
-  const [showWatchlist, setShowWatchList] = useState(true);
+  
 
 
 
     
   return (
-    <div>
+    <div className="body">
       <Navbar NavBarProperties={stocks} />
+  
+        <div style={{backgroundImage: `url(${background})` }}>
+          <img src="frontend/src/img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg" alt=""/>
+
       <Routes>
         <Route
           path="/"
@@ -41,31 +47,14 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/home" element={<HomePage />}/>
-        <Route path="/watchlist" element={<Watchlist/>} />
+        <Route path="/watchlist" element={<Watchlist AddStock={AddStock}/>} />
         <Route path="/stocknews/" element={<StockNews />} />
         <Route path="/stocksearch" element={<StockSearch />} />
         <Route path="/addstock" element={<AddStock/>} /> 
         <Route path="/companyProfile" element={<CompanyProfile/>} /> 
         <Route path="/companyProfile/searchInput" element={<CompanyProfile/>} /> 
       </Routes>
-      <>
-      <div>
-      {showWatchlist ? (
-        <button onClick={() => setShowWatchList(!showWatchlist)}>Display Options</button>
-        ) : (
-          <ul className='list'>
-          <a href="http://localhost:3000/Watchlist/"><li className='listItem'>Watch List</li></a>
-          <a href="http://localhost:3000/StockSearch/"><li className='listItem'>Stock Search</li></a>
-          <a href="http://localhost:3000/StockNews/"><li className='listItem'>Stock News</li></a>
-          <a href="http://localhost:3000/CompanyProfile/"><li className='listItem'>Company Profile</li></a>
-      
-
-        <button onClick={() => setShowWatchList(!showWatchlist)}>Hide Optionts</button>
-      </ul>
-      )}
       </div>
-      </>
-
       <Footer />
     </div>
     

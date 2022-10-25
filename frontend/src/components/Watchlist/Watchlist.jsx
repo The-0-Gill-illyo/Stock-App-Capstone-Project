@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import DisplayStockSearch from '../StockSearch/DisplayStockDetails';
-import AddStock from './AddStock';
+import './Watchlist.css';
 
 
 const Watchlist = (props) =>{
@@ -9,11 +8,13 @@ const Watchlist = (props) =>{
 
     function addNewStock(entry){
         let tempEntries = [entry, ...addStocks];
-        setAddStocks(tempEntries)
+        tempEntries.push(addNewStock)
+        setAddStocks(addStocks)
+        console.log(tempEntries)
     }
 
     return (
-        <div>
+        <div className='watchlist-container'>
         <table>
             <thead>
             <tr>
@@ -31,7 +32,7 @@ const Watchlist = (props) =>{
                         <td>{stock.stock_name}</td>
                         <td>{stock.target_price}</td>
                         <td>{stock.user_id}</td>
-                        <button type="submit">Add to Watchlist</button>
+                        <button className="button" type="submit" >Add to Watchlist</button>
                     </tr>
                 );
             })}

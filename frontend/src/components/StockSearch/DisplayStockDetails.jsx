@@ -1,6 +1,5 @@
 
 
-
 export default function DisplayStockSearch(props){
 
     function handleClick(stock){

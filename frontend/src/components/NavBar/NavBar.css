@@ -8,28 +8,29 @@ li {
   font-size: 1.25rem;
 }
 
-.navBar {
-  background: steelblue;
-  box-shadow: 4px 2px 5px gray;
-  color: white;
+.pretty-background {
+  background:
+    linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
   margin-bottom: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
 }
 
-.navBar button {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 0.4rem 0.5rem;
+.profile-username {
+  color: #1248a6 !important;
+}
+.pretty-background button {
+  display: inline;
+  background: chocolate;
+  border: 3px solid rgb(8, 8, 8);
+  color: gold;
+  padding: 0.4rem 3rem;
 }
 
-.navBar button:hover {
-  background: white;
-  color: steelblue;
-  cursor: pointer;
-}
 
 .brand {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
 }

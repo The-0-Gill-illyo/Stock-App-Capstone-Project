@@ -16,7 +16,6 @@ const StockNews = () => {
             let newsSearch;
       
             console.log(stockNews)
-            // props.StockNews(newsSearch)
 
             try{
                 let response = await axios.get(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/ne/news/${searchInput}`, { headers: {
@@ -29,7 +28,7 @@ const StockNews = () => {
           console.log(error.response.data)
       }           
             }
-      
+          
         return ( 
             <div>
               <form onSubmit={handleSubmit}>             

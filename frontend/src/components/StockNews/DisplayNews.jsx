@@ -1,17 +1,24 @@
-export default function DisplayStockNews(props){
+import { useState } from "react"
+
+export default function DisplayStockNews(){
+    const [grabArticles, setGrabArticles] = useState([]);
 
     function handleClick(news){
 
         console.log(news)
         let newsId = news.id.newsId
-    }
-    
-    {props.stockNews.map((description, link) => {
-    return(
-       <h5>
-        {props.stockNews.description[0]}
+    };
 
-        </h5>
-    )
-})}
+
+    const article = grabArticles.map(title => (
+        <nav>
+        <div>
+        <h5>{title.description}</h5>
+        <h5>{title.link}</h5>
+        </div>
+        </nav>
+        ));
+
+        
+        return <div>{article.setGrabArticles}</div>
 }

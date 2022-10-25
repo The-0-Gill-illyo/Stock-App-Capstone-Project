@@ -17,16 +17,14 @@ p {
   font-size: 20px;
 }
 
-
 .dropbtn {
-   color:gold;
+  color:gold;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  position: fixed;
+  position: relative;
   display: inline-block;
-
 }
 
 

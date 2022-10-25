@@ -4,6 +4,7 @@ import DisplayStockDetails from "./DisplayStockDetails";
 
 
 
+
 const StockSearch = () => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
@@ -42,7 +43,8 @@ const StockSearch = () => {
                 <i className="fa-fa search">search</i>
                 </button>
               </form>
-              <DisplayStockDetails searchStocks={searchStocks}/>             
+              <DisplayStockDetails searchStocks={searchStocks}/> 
+                          
             </div>
   );
 

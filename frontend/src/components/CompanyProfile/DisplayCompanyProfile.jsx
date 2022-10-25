@@ -10,7 +10,7 @@ export default function DisplayCompanyProfile(props){
     }
     
     return(
-         <h5>
+         <h3>
             {props.companyProfile.address1}
             <br></br>
             <br></br>
@@ -36,6 +36,6 @@ export default function DisplayCompanyProfile(props){
             {props.companyProfile.longBusinessSummary}
             <br></br>
 
-         </h5>
+         </h3>
     )
 }
