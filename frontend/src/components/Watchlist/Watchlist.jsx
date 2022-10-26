@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddStock from './AddStock';
 import './Watchlist.css';
 
 
@@ -19,25 +20,28 @@ const Watchlist = (props) =>{
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Sock Name</th>
+                <th>Stock Name</th>
                 <th>Target Price</th>
                 <th>User Id</th>
             </tr>
             </thead>
             <tbody>
             {addStocks.map((stock, index) => {
+                console.log("Stock options")
+                console.log(stock)
                 return (
                     <tr key={index}>
                         <td>{stock.id}</td>
                         <td>{stock.stock_name}</td>
                         <td>{stock.target_price}</td>
                         <td>{stock.user_id}</td>
-                        {/* <button className="button" type="submit" >Add to Watchlist</button> */}
+                        <button className="button" type="submit" >Add to Watchlist</button>
                     </tr>
                 );
             })}
             </tbody>
         </table>
+        <AddStock/>
         </div>
       );
 }

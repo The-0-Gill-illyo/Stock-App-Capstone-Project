@@ -1,3 +1,5 @@
+import AddStock from "../Watchlist/AddStock"
+import Watchlist from "../Watchlist/Watchlist"
 
 
 export default function DisplayStockSearch(props){
@@ -9,8 +11,8 @@ export default function DisplayStockSearch(props){
     }
     
     return(
+        <div>
         <form>
-            <button type="submit">Add To Watchlist</button>
         <h1>
             Ticker Symbol: {props.searchStocks.symbol}
             <br></br>
@@ -37,5 +39,6 @@ export default function DisplayStockSearch(props){
             Daily 3-Month Average: {props.searchStocks.averageDailyVolume3Month}
         </h1>
         </form>
+        </div>
         )
         }

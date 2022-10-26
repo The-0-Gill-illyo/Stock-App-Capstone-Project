@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Watchlist from './Watchlist';
 
-const Button = (props) =>{
+const Button = (props) => {
 
-    const [button, setButton] =useState("inactive");
+    const [button, setButton] = useState("inactive");
 
-    function buttonClick(){
+    function buttonClick() {
         if(button == "inactive"){
             setButton("active");
         }
