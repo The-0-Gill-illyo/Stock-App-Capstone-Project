@@ -1,6 +1,5 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
-import React, {  useState } from 'react';
 import "./App.css";
 import background from "./img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg";
 
@@ -23,7 +22,7 @@ import StockNews from "./components/StockNews/StockNews";
 
 function App() {
 
-  const [stocks, setStocks] = useState([]);
+
     
 
 
@@ -39,14 +38,14 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage HomePageProperties={stocks} />
+              <HomePage  />
             </PrivateRoute>
           }
           />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/home" element={<HomePage />}/>
-        <Route path="/watchlist" element={<Watchlist parentEntries={stocks}/>} />
+        <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/stocknews/" element={<StockNews />} />
         <Route path="/stocksearch" element={<StockSearch />} />
         <Route path="/companyProfile" element={<CompanyProfile/>} /> 

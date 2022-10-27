@@ -1,41 +1,32 @@
-
+import React, { useState } from 'react';
+import DisplayWatchlistDetails from './DisplayWatchListEntries';
 import AddStock from './AddStock';
 import './Watchlist.css';
 
 
-const Watchlist = (props) =>{
+function Watchlist() {
 
+    const [entries, setEntries] = useState ([])
 
-
+    function addNewEntry(entry){
+  
+    let tempEntries = [entry, ...entries];
     
+    setEntries(tempEntries);
+    console.log(tempEntries.addNewEntry)
+    }
     return (
-        <div className='watchlist-container'>
-        <table>
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Stock Name</th>
-                <th>Target Price</th>
-                <th>User Id</th>
-            </tr>
-            </thead>
-            <tbody>
-            {props.parentEntries.map((stock, index) => {
-                console.log(stock)
-                return (
-                    <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{stock.id}</td>
-                        <td>{stock.stock_name}</td>
-                        <td>{stock.target_price}</td>
-                        <td>{stock.user_id}</td>
-                    </tr>
-                );
-            })}
-            </tbody>
-        </table>
-        <AddStock />
+        <div>
+            <DisplayWatchlistDetails parentEntries={entries} />
+            <div>
+            <AddStock AddStockProperty={addNewEntry} />
+            </div>
+            <div>
+            <h1>{}</h1>
+            </div>
         </div>
+
+ 
       );
 }
 export default Watchlist;

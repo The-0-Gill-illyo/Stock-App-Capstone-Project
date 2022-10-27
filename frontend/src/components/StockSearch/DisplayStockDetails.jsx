@@ -1,3 +1,4 @@
+import Watchlist from "../Watchlist/Watchlist"
 
 export default function DisplayStockSearch(props){
 
@@ -38,6 +39,7 @@ export default function DisplayStockSearch(props){
             Daily 3-Month Average: {props.searchStocks.averageDailyVolume3Month}
         </h1>
         </form>
+        {/* <Watchlist/> */}
         </div>
         )
         }

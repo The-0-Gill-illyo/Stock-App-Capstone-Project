@@ -4,7 +4,6 @@ import DisplayStockDetails from "./DisplayStockDetails";
 
 
 
-
 const StockSearch = () => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
@@ -44,7 +43,8 @@ const StockSearch = () => {
                 </button>
               </form>
               <DisplayStockDetails searchStocks={searchStocks}/> 
-                          
+              <div>
+              </div>
             </div>
   );
 

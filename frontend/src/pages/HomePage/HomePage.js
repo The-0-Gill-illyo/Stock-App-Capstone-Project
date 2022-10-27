@@ -25,7 +25,7 @@ const HomePage = (props) => {
         props.HomePageProperties(cars)      }
     };
     fetchCars();
-  }, [token]);
+  }, [token, cars, props]);
   return (
     <div className="container">
       <h1>Home Page for {user.username}!</h1>

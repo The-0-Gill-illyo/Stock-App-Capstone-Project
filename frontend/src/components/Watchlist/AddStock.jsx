@@ -13,23 +13,25 @@ const AddStock = (props) => {
 
         let newStock = {
             stockName: stockName,
-            targetPrice: targetPrice
+            targetPrice: targetPrice,
             };
-           console.log(newStock)
+           console.log(newStock);
+           props.AddStockProperty(newStock)
         }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <label>Stock Name</label>
-            <input type='letter' value={stockName} onChange={(event)=> setStockName(event.target.value)}/>
-            <label>Target Price</label>
-            <input type='number' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
-            <button type="submit">Add To Watchlist</button>
-                <div>
-
-                 
+        <div>
+            <form onSubmit={handleSubmit} className='form-grid'>
+                <div className='form-grid'>
+                <label>Stock Name</label>
+                <input type='letter' className='form-grid' value={stockName} onChange={(event)=> setStockName(event.target.value)}/>
+                <label>Target Price</label>
+                <input type='number' className='form-grid' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
                 </div>
-        </form>
+                <button type="submit" className='btn btn-primary' style={{'marginTop': '1em'}}>Add To Watchlist</button>
+            </form>
+  
+        </div>
         
         
     )
