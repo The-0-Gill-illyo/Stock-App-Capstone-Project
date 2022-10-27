@@ -1,6 +1,3 @@
-import AddStock from "../Watchlist/AddStock"
-import Watchlist from "../Watchlist/Watchlist"
-
 
 export default function DisplayStockSearch(props){
 
@@ -8,11 +5,13 @@ export default function DisplayStockSearch(props){
 
         console.log(stock)
         let stockId = stock.id.stockId
+        console.log(stockId)
     }
+    
     
     return(
         <div>
-        <form>
+        <form onSubmit={handleClick}>
         <h1>
             Ticker Symbol: {props.searchStocks.symbol}
             <br></br>
