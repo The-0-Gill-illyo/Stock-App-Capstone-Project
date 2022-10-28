@@ -1,5 +1,6 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
 import "./App.css";
 import background from "./img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg";
 
@@ -11,8 +12,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Watchlist from "./components/Watchlist/Watchlist";
 import CompanyProfile from "./components/CompanyProfile/CompanyProfile";
+import AddStock from "./components/AddStock/AddStock";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import StockSearch from "./components/StockSearch/StockSearch";
@@ -22,9 +23,15 @@ import StockNews from "./components/StockNews/StockNews";
 
 function App() {
 
+  const [entries, setEntries] = useState ([])
 
-    
+  function addNewEntry(entry){
 
+  let tempEntries = [entry, ...entries];
+  
+  setEntries(tempEntries);
+  console.log(tempEntries.addNewEntry)
+  }
 
   return (
     <div className="body">
@@ -45,13 +52,15 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/home" element={<HomePage />}/>
-        <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/stocknews/" element={<StockNews />} />
         <Route path="/stocksearch" element={<StockSearch />} />
         <Route path="/companyProfile" element={<CompanyProfile/>} /> 
       </Routes>
       </div>
-      
+      <div>
+      <AddStock AddStockProperty={addNewEntry} />
+
+      </div>
       <Footer />
     </div>
     
