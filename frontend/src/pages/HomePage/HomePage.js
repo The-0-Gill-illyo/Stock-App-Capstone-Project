@@ -28,7 +28,7 @@ const HomePage = (props) => {
   }, [token, cars, props]);
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
+      <h1>Watchlist Page for {user.username}!</h1>
       {cars &&
         cars.map((car) => (
           <p key={car.id}>

@@ -20,8 +20,7 @@ const AddStock = (props) => {
         }
 
     return(
-        <div>
-            <form onSubmit={handleSubmit} className='form-grid'>
+                  <form onSubmit={handleSubmit} className='form-grid'>
                 <div className='form-grid'>
                 <label>Stock Name</label>
                 <input type='letter' className='form-grid' value={stockName} onChange={(event)=> setStockName(event.target.value)}/>
@@ -29,10 +28,7 @@ const AddStock = (props) => {
                 <input type='number' className='form-grid' value={targetPrice}  onChange={(event)=> setTargetPrice(parseFloat(event.target.value))}/>
                 </div>
                 <button type="submit" className='btn btn-primary' style={{'marginTop': '1em'}}>Add To Watchlist</button>
-            </form>
-  
-        </div>
-        
+            </form>     
         
     )
 }

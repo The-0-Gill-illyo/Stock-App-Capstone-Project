@@ -10,14 +10,15 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 // Component Imports
-import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import CompanyProfile from "./components/CompanyProfile/CompanyProfile";
 import AddStock from "./components/AddStock/AddStock";
+import DisplayWatchlist from "./components/DisplayWatchList/DisplayWatchList";
+import StockNews from "./components/StockNews/StockNews";
+import StockSearch from "./components/StockSearch/StockSearch";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import StockSearch from "./components/StockSearch/StockSearch";
-import StockNews from "./components/StockNews/StockNews";
+import Navbar from "./components/NavBar/NavBar";
 
 
 
@@ -30,16 +31,11 @@ function App() {
   let tempEntries = [entry, ...entries];
   
   setEntries(tempEntries);
-  console.log(tempEntries.addNewEntry)
   }
 
   return (
-    <div className="body">
+    <div style={{backgroundImage: `url(${background})` }}>
       <Navbar />
-  
-        <div style={{backgroundImage: `url(${background})` }}>
-          <img src="frontend/src/img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg" alt=""/>
-
       <Routes>
         <Route
           path="/"
@@ -56,10 +52,17 @@ function App() {
         <Route path="/stocksearch" element={<StockSearch />} />
         <Route path="/companyProfile" element={<CompanyProfile/>} /> 
       </Routes>
-      </div>
       <div>
       <AddStock AddStockProperty={addNewEntry} />
-
+      </div>
+      <div>
+        <DisplayWatchlist parentEntries={entries}/>
+      </div>
+      <div>
+          <img src="frontend/src/img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg" alt=""/>
+      </div>
+      <div>
+      
       </div>
       <Footer />
     </div>
