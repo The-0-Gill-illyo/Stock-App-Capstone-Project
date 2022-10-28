@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayStockDetails from "./DisplayStockDetails";
+import StockChartData, {Chart} from "../StockChartData/StockChartData"
 
 
-
-const StockSearch = () => {
+const StockSearch = (props) => {
     const [searchStocks, setSearchStocks] = useState([]);
     const [searchInput, setSearchInput] = useState("");
 
@@ -44,6 +44,7 @@ const StockSearch = () => {
               </form>
               <DisplayStockDetails searchStocks={searchStocks}/> 
               <div>
+                {/* <StockChartData searchStocks={searchStocks}/> */}
               </div>
             </div>
   );

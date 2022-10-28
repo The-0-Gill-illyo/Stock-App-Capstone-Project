@@ -22,7 +22,7 @@ function Watchlist() {
             <AddStock AddStockProperty={addNewEntry} />
             </div>
             <div>
-            <h1>{}</h1>
+                
             </div>
         </div>
 
